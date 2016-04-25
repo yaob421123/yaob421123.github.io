@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javerscript 获取class | yaobin&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="12345678910111213141516171819202122&amp;lt;script&amp;gt;var getByClass = function (oParent, cname) &amp;#123;    if (oParent == null) &amp;#123;        oParent = document;    &amp;#125;    if (oParent.getElementsByClass">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javerscript 获取class">
+<meta property="og:url" content="http://yoursite.com/2015/10/21/javerscript-获取class/index.html">
+<meta property="og:site_name" content="yaobin's blog">
+<meta property="og:description" content="12345678910111213141516171819202122&amp;lt;script&amp;gt;var getByClass = function (oParent, cname) &amp;#123;    if (oParent == null) &amp;#123;        oParent = document;    &amp;#125;    if (oParent.getElementsByClass">
+<meta property="og:updated_time" content="2016-04-25T01:04:10.810Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javerscript 获取class">
+<meta name="twitter:description" content="12345678910111213141516171819202122&amp;lt;script&amp;gt;var getByClass = function (oParent, cname) &amp;#123;    if (oParent == null) &amp;#123;        oParent = document;    &amp;#125;    if (oParent.getElementsByClass">
+  
+    <link rel="alternate" href="/atom.xml" title="yaobin&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <link rel="icon" href="/css/favicon.ico">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer">
+    <div id="header-title">
+      <h3><img src="/css/images/logo.jpg" alt=""></h3>
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yaobin&#39;s blog</a>
+      </h1>
+    </div>
+    <div id="header-inner" class="inner">
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div> -->
+      <nav id="main-nav">
+        <ul>
+          
+          <li><a class="main-nav-link" href="/">Home</a></li>
+          
+          <li><a class="main-nav-link" href="/archives">Archives</a></li>
+          
+        </ul> 
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav> -->
+    </div>
+    <div class="footer">
+      <div id="footer-info">
+        &copy; 2016 yaobin<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javerscript-获取class" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javerscript 获取class
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/10/21/javerscript-获取class/" class="article-date">
+  <time datetime="2015-10-21T01:03:22.000Z" itemprop="datePublished">2015-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var getByClass = function (oParent, cname) &#123;</span><br><span class="line">    if (oParent == null) &#123;</span><br><span class="line">        oParent = document;</span><br><span class="line">    &#125;</span><br><span class="line">    if (oParent.getElementsByClassName) &#123;</span><br><span class="line">        return oParent.getElementsByClassName(cname);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        var all = oParent.getElementsByTagName(&quot;*&quot;);</span><br><span class="line">        var j = all.length;</span><br><span class="line">        var theClass = new RegExp(&quot;(^|\\s)&quot; + cname + &quot;(\\s|$)&quot;);</span><br><span class="line">        var result = new Array();</span><br><span class="line">        for (var i = 0; i &lt; j; i++) &#123;</span><br><span class="line">            var allClass = all[i].className;</span><br><span class="line">            if (theClass.test(allClass)) &#123;</span><br><span class="line">                result.push(all[i])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  <section id="comments">
+   <!-- 多说评论框 start -->
+<div id="ds-thread" class="ds-thread" data-thread-key="2015/10/21/javerscript-获取class/" data-title="javerscript 获取class" data-url="http://yoursite.com/2015/10/21/javerscript-获取class/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+  </section>
+  
+  </div>
+</article>
+</section>
+
+      </div>
+      
+    </div>
+    
+
+  </div>
+</body>
+</html>

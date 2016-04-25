@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端构建工具gulp入门教程 | yaobin&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第1步：安装Node首先，最基本也最重要的是，我们需要搭建node环境。访问 nodejs.org，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。npm会随着安装包一起安装，稍后会用到它。
+为了确保Node已经正确安装，我们执行几个简单的命令。
+12node -vnpm -v
+因为国内访问外网都很慢，甚至不能访问！
+淘宝针对国内下载npm库缓慢的问题，使用建立">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端构建工具gulp入门教程">
+<meta property="og:url" content="http://yoursite.com/2015/09/28/前端构建工具gulp入门教程/index.html">
+<meta property="og:site_name" content="yaobin's blog">
+<meta property="og:description" content="第1步：安装Node首先，最基本也最重要的是，我们需要搭建node环境。访问 nodejs.org，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。npm会随着安装包一起安装，稍后会用到它。
+为了确保Node已经正确安装，我们执行几个简单的命令。
+12node -vnpm -v
+因为国内访问外网都很慢，甚至不能访问！
+淘宝针对国内下载npm库缓慢的问题，使用建立">
+<meta property="og:updated_time" content="2016-04-21T09:09:29.296Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端构建工具gulp入门教程">
+<meta name="twitter:description" content="第1步：安装Node首先，最基本也最重要的是，我们需要搭建node环境。访问 nodejs.org，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。npm会随着安装包一起安装，稍后会用到它。
+为了确保Node已经正确安装，我们执行几个简单的命令。
+12node -vnpm -v
+因为国内访问外网都很慢，甚至不能访问！
+淘宝针对国内下载npm库缓慢的问题，使用建立">
+  
+    <link rel="alternate" href="/atom.xml" title="yaobin&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <link rel="icon" href="/css/favicon.ico">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer">
+    <div id="header-title">
+      <h3><img src="/css/images/logo.jpg" alt=""></h3>
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yaobin&#39;s blog</a>
+      </h1>
+    </div>
+    <div id="header-inner" class="inner">
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div> -->
+      <nav id="main-nav">
+        <ul>
+          
+          <li><a class="main-nav-link" href="/">Home</a></li>
+          
+          <li><a class="main-nav-link" href="/archives">Archives</a></li>
+          
+        </ul> 
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav> -->
+    </div>
+    <div class="footer">
+      <div id="footer-info">
+        &copy; 2016 yaobin<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-前端构建工具gulp入门教程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端构建工具gulp入门教程
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/09/28/前端构建工具gulp入门教程/" class="article-date">
+  <time datetime="2015-09-28T08:14:41.000Z" itemprop="datePublished">2015-09-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第1步：安装Node"><span class="toc-number">1.</span> <span class="toc-text">第1步：安装Node</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第2步：安装gulp"><span class="toc-number">2.</span> <span class="toc-text">第2步：安装gulp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第3步：新建gulpfile-js文件"><span class="toc-number">3.</span> <span class="toc-text">第3步：新建gulpfile.js文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第4步：编辑gulpfile-js文件"><span class="toc-number">4.</span> <span class="toc-text">第4步：编辑gulpfile.js文件</span></a></li></ol>
+        </div>
+        
+        <h3 id="第1步：安装Node"><a href="#第1步：安装Node" class="headerlink" title="第1步：安装Node"></a>第1步：安装Node</h3><p>首先，最基本也最重要的是，我们需要搭建node环境。访问 nodejs.org，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。npm会随着安装包一起安装，稍后会用到它。</p>
+<p>为了确保Node已经正确安装，我们执行几个简单的命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>因为国内访问外网都很慢，甚至不能访问！</p>
+<p>淘宝针对国内下载npm库缓慢的问题，使用建立自己的cnpm库，可以很方便使用在公司内部使用，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
+<p>如果这命令没有得到返回，可能node就没有安装正确，进行重装。安装淘宝镜像后，以后下载npm库，都用cnpm代替，下载会快很多。</p>
+<h3 id="第2步：安装gulp"><a href="#第2步：安装gulp" class="headerlink" title="第2步：安装gulp"></a>第2步：安装gulp</h3><p>首先我们要全局安装一遍：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g gulp</span><br></pre></td></tr></table></figure>
+<p>运行时注意查看命令行有没有错误信息，安装完成后，你可以使用下面的命令查看gulp的版本号以确保gulp已经被正确安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp -v</span><br></pre></td></tr></table></figure>
+<p>接着我们要进去到项目的根目录再安装一遍</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install gulp --save-dev</span><br></pre></td></tr></table></figure>
+<h3 id="第3步：新建gulpfile-js文件"><a href="#第3步：新建gulpfile-js文件" class="headerlink" title="第3步：新建gulpfile.js文件"></a>第3步：新建gulpfile.js文件</h3><ul>
+<li>sass的编译（gulp-sass）</li>
+<li>自动添加css前缀（gulp-autoprefixer）</li>
+<li>压缩css（gulp-minify-css）</li>
+<li>js代码校验（gulp-jshint）</li>
+<li>合并js文件（gulp-concat）</li>
+<li>压缩js代码（gulp-uglify）</li>
+<li>压缩图片（gulp-imagemin）</li>
+<li>自动刷新页面（gulp-livereload）</li>
+<li>图片缓存，只有图片替换了才压缩（gulp-cache）</li>
+<li>更改提醒（gulp-notify）</li>
+</ul>
+<p>安装这些插件需要运行如下命令（也可以拆开单独安装）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install gulp-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache --save-dev</span><br></pre></td></tr></table></figure>
+<p>接着我们要创建一个gulpfile.js在根目录下，gulp只有四个API：<br>task，watch，src，和 dest</p>
+<ul>
+<li><strong>task</strong>这个API用来创建任务，在命令行下可以输入 gulp test 来执行test的任务。</li>
+<li><strong>watch</strong>这个API用来监听任务。</li>
+<li><strong>src</strong>这个API设置需要处理的文件的路径，可以是多个文件以数组的形式[main.scss, vender.scss]，也可以是正则表达式/<em>*/</em>.scss。</li>
+<li><strong>dest</strong>这个API设置生成文件的路径，一个任务可以有多个生成路径，一个可以输出未压缩的版本，另一个可以输出压缩后的版本。</li>
+</ul>
+<h3 id="第4步：编辑gulpfile-js文件"><a href="#第4步：编辑gulpfile-js文件" class="headerlink" title="第4步：编辑gulpfile.js文件"></a>第4步：编辑gulpfile.js文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">//加载插件</span><br><span class="line">var gulp = require(&apos;gulp&apos;),</span><br><span class="line">    sass = require(&apos;gulp-sass&apos;),//sass的编译</span><br><span class="line">    autoprefixer = require(&apos;gulp-autoprefixer&apos;),//使用Autoprefixer来补全浏览器兼容的css</span><br><span class="line">    minifycss = require(&apos;gulp-minify-css&apos;),//压缩css</span><br><span class="line">    jshint = require(&apos;gulp-jshint&apos;),//js代码校验</span><br><span class="line">    uglify = require(&apos;gulp-uglify&apos;),//压缩js代码</span><br><span class="line">    imagemin = require(&apos;gulp-imagemin&apos;),//压缩图片</span><br><span class="line">    rename = require(&apos;gulp-rename&apos;),</span><br><span class="line">    concat = require(&apos;gulp-concat&apos;),//合并js文件</span><br><span class="line">    notify = require(&apos;gulp-notify&apos;),</span><br><span class="line">    cache = require(&apos;gulp-cache&apos;),//图片缓存，只有图片替换了才压缩</span><br><span class="line">    livereload = require(&apos;gulp-livereload&apos;),//自动刷新页面</span><br><span class="line">    watch = require(&apos;gulp-watch&apos;);</span><br><span class="line"></span><br><span class="line">// 编译sass、自动添加css前缀和压缩。Styles任务</span><br><span class="line">gulp.task(&apos;styles&apos;, function () &#123;</span><br><span class="line">    return gulp.src(&apos;stylesheets/*.scss&apos;)</span><br><span class="line">        .pipe(sass())</span><br><span class="line">        .pipe(autoprefixer(&apos;last 2 version&apos;, &apos;safari 5&apos;, &apos;ie 8&apos;, &apos;ie 9&apos;, &apos;opera 12.1&apos;, &apos;ios 6&apos;, &apos;android 4&apos;))//添加前缀</span><br><span class="line">        .pipe(gulp.dest(&apos;assets/css/&apos;))//保存未压缩文件到我们指定的目录下面</span><br><span class="line">        .pipe(rename(&#123;</span><br><span class="line">            suffix: &apos;.min&apos;//给文件添加.min后缀</span><br><span class="line">        &#125;))</span><br><span class="line">        .pipe(minifycss())//压缩样式文件</span><br><span class="line">        .pipe(gulp.dest(&apos;assets/css/&apos;))//输出压缩文件到指定目录</span><br><span class="line">        .pipe(notify(&#123;</span><br><span class="line">            message: &apos;Styles task complete&apos;//提醒任务完成</span><br><span class="line">        &#125;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//  js代码校验、合并和压缩 Scripts。 Scripts任务</span><br><span class="line">gulp.task(&apos;scripts&apos;, function () &#123;</span><br><span class="line">    return gulp.src(&apos;javescript/*.js&apos;) //js代码校验</span><br><span class="line">        .pipe(jshint())</span><br><span class="line">        .pipe(jshint.reporter(&apos;default&apos;))</span><br><span class="line">        .pipe(concat(&apos;all.js&apos;))//js代码合并</span><br><span class="line">        .pipe(rename(&#123;</span><br><span class="line">            suffix: &apos;.min&apos;//给文件添加.min后缀</span><br><span class="line">        &#125;))</span><br><span class="line">        .pipe(uglify())//压缩脚本文件</span><br><span class="line">        .pipe(gulp.dest(&apos;assets/js/&apos;))//输出压缩文件到指定目录</span><br><span class="line">        .pipe(notify(&#123;</span><br><span class="line">            message: &apos;Scripts task complete&apos;//提醒任务完成</span><br><span class="line">        &#125;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 图片压缩。Images</span><br><span class="line">gulp.task(&apos;images&apos;, function () &#123;</span><br><span class="line">    return gulp.src(&apos;assets/images/*&apos;)//检测图片路径</span><br><span class="line">        .pipe(cache(imagemin(&#123;</span><br><span class="line">            optimizationLevel: 3,</span><br><span class="line">            progressive: true,</span><br><span class="line">            interlaced: true</span><br><span class="line">        &#125;)))</span><br><span class="line">        .pipe(gulp.dest(&apos;assets/images&apos;))</span><br><span class="line">        .pipe(notify(&#123;</span><br><span class="line">            message: &apos;Images task complete&apos;</span><br><span class="line">        &#125;));</span><br><span class="line">&#125;);</span><br><span class="line">// Default task</span><br><span class="line">gulp.task(&apos;default&apos;, function () &#123;</span><br><span class="line">    gulp.start(&apos;styles&apos;, &apos;scripts&apos;, &apos;images&apos;);</span><br><span class="line">&#125;);</span><br><span class="line">// 事件监听。Watch</span><br><span class="line">gulp.task(&apos;watch&apos;, function () &#123;</span><br><span class="line">    gulp.watch(&apos;stylesheets/*.scss&apos;, [&apos;styles&apos;]);</span><br><span class="line">    gulp.watch(&apos;javascript/*.js&apos;, [&apos;scripts&apos;]);</span><br><span class="line">    gulp.watch(&apos;assets/images/*&apos;, [&apos;images&apos;]);</span><br><span class="line">    livereload.listen();</span><br><span class="line">    gulp.watch([&apos;assets/*&apos;]).on(&apos;change&apos;, livereload.changed);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  <section id="comments">
+   <!-- 多说评论框 start -->
+<div id="ds-thread" class="ds-thread" data-thread-key="2015/09/28/前端构建工具gulp入门教程/" data-title="前端构建工具gulp入门教程" data-url="http://yoursite.com/2015/09/28/前端构建工具gulp入门教程/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+  </section>
+  
+  </div>
+</article>
+</section>
+
+      </div>
+      
+    </div>
+    
+
+  </div>
+</body>
+</html>

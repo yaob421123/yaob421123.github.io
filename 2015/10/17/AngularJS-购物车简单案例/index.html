@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>AngularJS 购物车简单案例 | yaobin&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101&amp;lt;!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJS 购物车简单案例">
+<meta property="og:url" content="http://yoursite.com/2015/10/17/AngularJS-购物车简单案例/index.html">
+<meta property="og:site_name" content="yaobin's blog">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101&amp;lt;!">
+<meta property="og:updated_time" content="2016-04-21T09:16:56.258Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AngularJS 购物车简单案例">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101&amp;lt;!">
+  
+    <link rel="alternate" href="/atom.xml" title="yaobin&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <link rel="icon" href="/css/favicon.ico">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer">
+    <div id="header-title">
+      <h3><img src="/css/images/logo.jpg" alt=""></h3>
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yaobin&#39;s blog</a>
+      </h1>
+    </div>
+    <div id="header-inner" class="inner">
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div> -->
+      <nav id="main-nav">
+        <ul>
+          
+          <li><a class="main-nav-link" href="/">Home</a></li>
+          
+          <li><a class="main-nav-link" href="/archives">Archives</a></li>
+          
+        </ul> 
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav> -->
+    </div>
+    <div class="footer">
+      <div id="footer-info">
+        &copy; 2016 yaobin<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-AngularJS-购物车简单案例" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      AngularJS 购物车简单案例
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/10/17/AngularJS-购物车简单案例/" class="article-date">
+  <time datetime="2015-10-17T09:16:19.000Z" itemprop="datePublished">2015-10-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset = &quot;utf-8&quot;&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot; src = &quot;js/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">           .item&#123;</span><br><span class="line">                height: 200px;</span><br><span class="line">                width:100px;</span><br><span class="line">                margin:5px;</span><br><span class="line">                border:1px solid #ccc;</span><br><span class="line">                float:left;</span><br><span class="line">           &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body ng-app = &quot;mapp&quot; ng-controller = &quot;mctrl&quot;&gt;</span><br><span class="line">        &lt;!--</span><br><span class="line">        &lt;div class = &quot;list&quot;&gt;</span><br><span class="line">            &lt;div class = &quot;item&quot; ng-repeat = &quot;item in items&quot;&gt;</span><br><span class="line">                &lt;p class = &quot;item-name&quot;&gt;&lt;span&gt;商品名:&lt;/span&gt;&#123;&#123;item.name&#125;&#125;&lt;/p&gt;</span><br><span class="line">                &lt;p class = &quot;item-price&quot;&gt;&lt;span&gt;价格:&lt;/span&gt;&#123;&#123;item.price|currency:&quot;￥&quot;&#125;&#125;&lt;/p&gt;</span><br><span class="line">                &lt;input type = &quot;button&quot; ng-click = &quot;buy($index)&quot; value = &quot;购买&quot;&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        --&gt;</span><br><span class="line">        &lt;div class = &quot;item-car&quot;&gt;</span><br><span class="line">            &lt;p ng-repeat = &quot;item in items&quot;&gt;</span><br><span class="line">                &lt;span&gt;&#123;&#123;item.name&#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span&gt;&#123;&#123;item.price|currency:&quot;单价&quot;&#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;input type = &quot;button&quot; value = &quot;-&quot; ng-click = &quot;minus($index)&quot;/&gt;</span><br><span class="line">                &lt;input type = &quot;text&quot; ng-model = &quot;varlist.itemNum[$index]&quot;&gt;</span><br><span class="line">                &lt;input type = &quot;button&quot; value = &quot;+&quot; ng-click = &quot;add($index)&quot;/&gt;</span><br><span class="line">                &lt;span&gt;单件总价:&#123;&#123;item.price*varlist.itemNum[$index]|currency:&quot;￥&quot;&#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">            &lt;p&gt;总价：&#123;&#123;varlist.total|number:2&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;span style=&quot;background-color: #339966;&quot;&gt;&lt;/span&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            var app = angular.module(&quot;mapp&quot;, []);</span><br><span class="line">            app.controller(&quot;mctrl&quot;, function($scope) &#123;</span><br><span class="line">                // 数据源</span><br><span class="line">                $scope.items = [&#123;</span><br><span class="line">                    &quot;name&quot;: &quot;王老吉&quot;,</span><br><span class="line">                    &quot;price&quot;: 4</span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    &quot;name&quot;: &quot;老干妈&quot;,</span><br><span class="line">                    &quot;price&quot;: 7.5</span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    &quot;name&quot;: &quot;臭豆腐&quot;,</span><br><span class="line">                    &quot;price&quot;: 7.32</span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    &quot;name&quot;: &quot;饼干&quot;,</span><br><span class="line">                    &quot;price&quot;: 22</span><br><span class="line">                &#125;, ];</span><br><span class="line">                var len = $scope.items.length;</span><br><span class="line">                var arr = [];</span><br><span class="line">                // 循环为数组赋值</span><br><span class="line">                for (var i = 0; i &lt; len; i++) &#123;</span><br><span class="line">                    arr[i] = 0;</span><br><span class="line">                &#125;</span><br><span class="line">                // 检测是否变化，为了总价能够改变</span><br><span class="line">                $scope.$watch(&quot;varlist.itemNum&quot;, function() &#123;</span><br><span class="line">                    getTotal();</span><br><span class="line">                &#125;, true);</span><br><span class="line">                // 定义变量</span><br><span class="line">                $scope.varlist = &#123;</span><br><span class="line">                    itemNum: arr,</span><br><span class="line">                    total: 0</span><br><span class="line">                &#125;</span><br><span class="line">                // 购物的时候操作</span><br><span class="line">                $scope.buy = function($index) &#123;</span><br><span class="line">                    $scope.varlist.itemNum[$index]++;</span><br><span class="line">                    getTotal();</span><br><span class="line">                &#125;</span><br><span class="line">                // -----</span><br><span class="line">                $scope.minus = function($index) &#123;</span><br><span class="line">                    if ($scope.varlist.itemNum[$index] == 0) &#123;</span><br><span class="line">                        return;</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        $scope.varlist.itemNum[$index]--;</span><br><span class="line">                        getTotal();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                // ++++</span><br><span class="line">                $scope.add = function($index) &#123;</span><br><span class="line">                    $scope.varlist.itemNum[$index]++;</span><br><span class="line">                    getTotal();</span><br><span class="line">                &#125;</span><br><span class="line">                // 计算总价</span><br><span class="line">                var getTotal = function($index) &#123;</span><br><span class="line">                    $scope.varlist.total = 0;</span><br><span class="line">                    for (var j = 0; j &lt; len; j++) &#123;</span><br><span class="line">                        $scope.varlist.total = $scope.varlist.total + $scope.varlist.itemNum[j] * $scope.items[j].price;</span><br><span class="line">                    &#125;</span><br><span class="line">                    return $scope.varlist.total;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">        &lt;span style=&quot;background-color: #339966;&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  <section id="comments">
+   <!-- 多说评论框 start -->
+<div id="ds-thread" class="ds-thread" data-thread-key="2015/10/17/AngularJS-购物车简单案例/" data-title="AngularJS 购物车简单案例" data-url="http://yoursite.com/2015/10/17/AngularJS-购物车简单案例/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+  </section>
+  
+  </div>
+</article>
+</section>
+
+      </div>
+      
+    </div>
+    
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[转]图片上传的demo，支持移动，缩放，裁剪 | yaobin&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="某大神写的图片上传的demo
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273&amp;lt;!doctype html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转]图片上传的demo，支持移动，缩放，裁剪">
+<meta property="og:url" content="http://yoursite.com/2015/10/13/转-图片上传的demo，支持移动，缩放，裁剪/index.html">
+<meta property="og:site_name" content="yaobin's blog">
+<meta property="og:description" content="某大神写的图片上传的demo
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273&amp;lt;!doctype html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;">
+<meta property="og:updated_time" content="2016-04-21T09:15:12.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[转]图片上传的demo，支持移动，缩放，裁剪">
+<meta name="twitter:description" content="某大神写的图片上传的demo
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273&amp;lt;!doctype html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;">
+  
+    <link rel="alternate" href="/atom.xml" title="yaobin&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <link rel="icon" href="/css/favicon.ico">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer">
+    <div id="header-title">
+      <h3><img src="/css/images/logo.jpg" alt=""></h3>
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yaobin&#39;s blog</a>
+      </h1>
+    </div>
+    <div id="header-inner" class="inner">
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div> -->
+      <nav id="main-nav">
+        <ul>
+          
+          <li><a class="main-nav-link" href="/">Home</a></li>
+          
+          <li><a class="main-nav-link" href="/archives">Archives</a></li>
+          
+        </ul> 
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav> -->
+    </div>
+    <div class="footer">
+      <div id="footer-info">
+        &copy; 2016 yaobin<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-转-图片上传的demo，支持移动，缩放，裁剪" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      [转]图片上传的demo，支持移动，缩放，裁剪
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/10/13/转-图片上传的demo，支持移动，缩放，裁剪/" class="article-date">
+  <time datetime="2015-10-13T09:14:35.000Z" itemprop="datePublished">2015-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>某大神写的图片上传的demo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;link  href=&quot;/domo/cropper.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;script src=&quot;/domo/lrz.bundle.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;/domo/cropper.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Upload Demo&lt;/h1&gt;</span><br><span class="line">&lt;input type=&quot;file&quot; id=&apos;input&apos;&gt;</span><br><span class="line">&lt;button id=&quot;crop&quot;&gt;Crop&lt;/button&gt;</span><br><span class="line">&lt;div id=&quot;img-preview&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;&quot;  id=&quot;showImage&quot; alt=&quot;&quot;/&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    var $ = function(el)&#123;</span><br><span class="line">        return document.querySelector(el);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    var result = $(&apos;#img-preview&apos;),</span><br><span class="line">        preview = $(&apos;#showImage&apos;),</span><br><span class="line">        cropOption = &#123;</span><br><span class="line">            aspectRatio: 1 / 1,</span><br><span class="line">            guides: false,</span><br><span class="line">            cropBoxResizable: false,</span><br><span class="line">            cropBoxMovable: false,</span><br><span class="line">            dragCrop: false,</span><br><span class="line">            minContainerWidth: 200,</span><br><span class="line">            minContainerHeight: 200</span><br><span class="line">        &#125;,</span><br><span class="line">        cropper = null;</span><br><span class="line"></span><br><span class="line">    // 预览</span><br><span class="line">    $(&apos;#input&apos;).onchange = function (e) &#123;</span><br><span class="line">        var file = this.files[0];</span><br><span class="line">        lrz(file,&#123;width: 600&#125;)</span><br><span class="line">            .then(function (rst) &#123;</span><br><span class="line">                preview.style.display = &apos;block&apos;;</span><br><span class="line">                preview.onload = function () &#123;</span><br><span class="line">                    cropper = new Cropper(preview,cropOption);</span><br><span class="line">                &#125;;</span><br><span class="line">                preview.src = rst.base64;</span><br><span class="line">            &#125;)</span><br><span class="line">            .catch(function (err) &#123;</span><br><span class="line"></span><br><span class="line">            &#125;)</span><br><span class="line">            .always(function () &#123;</span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 裁剪</span><br><span class="line">    $(&apos;#crop&apos;).onclick = function()&#123;</span><br><span class="line">        var img = new Image();</span><br><span class="line">        img.onload = function () &#123;</span><br><span class="line">            $(&apos;body&apos;).appendChild(img);</span><br><span class="line">            // 销毁</span><br><span class="line">            cropper.destroy();</span><br><span class="line">            preview.style.display = &apos;none&apos;;</span><br><span class="line">        &#125;;</span><br><span class="line">        img.src = cropper</span><br><span class="line">            .getCroppedCanvas(cropOption, &#123;</span><br><span class="line">                width: 200,</span><br><span class="line">                height: 200</span><br><span class="line">            &#125;)</span><br><span class="line">            .toDataURL(&quot;image/jpeg&quot;, 0.9);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  <section id="comments">
+   <!-- 多说评论框 start -->
+<div id="ds-thread" class="ds-thread" data-thread-key="2015/10/13/转-图片上传的demo，支持移动，缩放，裁剪/" data-title="[转]图片上传的demo，支持移动，缩放，裁剪" data-url="http://yoursite.com/2015/10/13/转-图片上传的demo，支持移动，缩放，裁剪/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+  </section>
+  
+  </div>
+</article>
+</section>
+
+      </div>
+      
+    </div>
+    
+
+  </div>
+</body>
+</html>

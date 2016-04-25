@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jquery 搜索自动匹配关键字 | yaobin&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在项目中，可能会碰到搜索功能自动匹配关键字功能，开始也不会，后经过某位大神提供代码实现了搜索自动匹配功能；实例使用的是模拟服务器发送json数据方式来实现功能；
+123456789101112131415var json = [    &amp;#123;        &amp;quot;name&amp;quot;: &amp;quot;搜索a&amp;quot;,        &amp;quot;pinyin&amp;quot;: &amp;quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery 搜索自动匹配关键字">
+<meta property="og:url" content="http://yoursite.com/2015/09/24/jquery-搜索自动匹配关键字/index.html">
+<meta property="og:site_name" content="yaobin's blog">
+<meta property="og:description" content="在项目中，可能会碰到搜索功能自动匹配关键字功能，开始也不会，后经过某位大神提供代码实现了搜索自动匹配功能；实例使用的是模拟服务器发送json数据方式来实现功能；
+123456789101112131415var json = [    &amp;#123;        &amp;quot;name&amp;quot;: &amp;quot;搜索a&amp;quot;,        &amp;quot;pinyin&amp;quot;: &amp;quot;">
+<meta property="og:updated_time" content="2016-04-21T06:24:32.886Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jquery 搜索自动匹配关键字">
+<meta name="twitter:description" content="在项目中，可能会碰到搜索功能自动匹配关键字功能，开始也不会，后经过某位大神提供代码实现了搜索自动匹配功能；实例使用的是模拟服务器发送json数据方式来实现功能；
+123456789101112131415var json = [    &amp;#123;        &amp;quot;name&amp;quot;: &amp;quot;搜索a&amp;quot;,        &amp;quot;pinyin&amp;quot;: &amp;quot;">
+  
+    <link rel="alternate" href="/atom.xml" title="yaobin&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <link rel="icon" href="/css/favicon.ico">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer">
+    <div id="header-title">
+      <h3><img src="/css/images/logo.jpg" alt=""></h3>
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yaobin&#39;s blog</a>
+      </h1>
+    </div>
+    <div id="header-inner" class="inner">
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div> -->
+      <nav id="main-nav">
+        <ul>
+          
+          <li><a class="main-nav-link" href="/">Home</a></li>
+          
+          <li><a class="main-nav-link" href="/archives">Archives</a></li>
+          
+        </ul> 
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav> -->
+    </div>
+    <div class="footer">
+      <div id="footer-info">
+        &copy; 2016 yaobin<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-jquery-搜索自动匹配关键字" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      jquery 搜索自动匹配关键字
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/09/24/jquery-搜索自动匹配关键字/" class="article-date">
+  <time datetime="2015-09-24T06:23:07.000Z" itemprop="datePublished">2015-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>在项目中，可能会碰到搜索功能自动匹配关键字功能，开始也不会，后经过某位大神提供代码实现了搜索自动匹配功能；<br>实例使用的是模拟服务器发送json数据方式来实现功能；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var json = [</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;搜索a&quot;,</span><br><span class="line">        &quot;pinyin&quot;: &quot;aaa&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;搜索b&quot;,</span><br><span class="line">        &quot;pinyin&quot;: &quot;bcd&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;数据&quot;,</span><br><span class="line">        &quot;pinyin&quot;: &quot;abc&quot;</span><br><span class="line">    &#125;</span><br><span class="line">       // 。。。。。。。。</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<h3 id="js代码："><a href="#js代码：" class="headerlink" title="js代码："></a>js代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#input&apos;).on(&apos;keyup&apos;, function () &#123;</span><br><span class="line">    var arr3=[];//匹配出来的所有对象</span><br><span class="line">    var search_str = $(this).val();</span><br><span class="line">    if(search_str !=&quot;&quot;)&#123; //判断当前搜索框非空</span><br><span class="line">        $(&quot;.search .s&quot;).css(&quot;display&quot;,&quot;block&quot;);//搜索框非空时，显示下拉搜索框</span><br><span class="line">        </span><br><span class="line">        var search_result = findInJsonPin(search_str, json);</span><br><span class="line">        var $show_area = $(&apos;#show-area&apos;);</span><br><span class="line">        $show_area.empty();</span><br><span class="line">        search_result.forEach(function (val) &#123;</span><br><span class="line">            $show_area.append(&apos;&lt;li&gt;&apos; + val + &apos;&lt;/li&gt;&apos;);//添加匹配出来的对象</span><br><span class="line">            arr3.push(val);//将所有匹配的对象存放到数组</span><br><span class="line">        &#125;);</span><br><span class="line">        //点击匹配的对象添加到输入框，并隐藏下拉搜索框</span><br><span class="line">        $(&quot;#show-area&quot;).on(&quot;click&quot;,&quot;li&quot;,function()&#123;</span><br><span class="line">            $(&apos;#input&apos;).val(arr3[$(this).index()]);</span><br><span class="line">            $(&quot;.search .s&quot;).css(&quot;display&quot;,&quot;none&quot;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        $(&quot;.search .s&quot;).css(&quot;display&quot;,&quot;none&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">function findInJson(search_str, json) &#123;</span><br><span class="line">    var result = [];</span><br><span class="line">    json.forEach(function (val) &#123;</span><br><span class="line">        var regex = new RegExp(search_str, &apos;i&apos;);</span><br><span class="line">        if (regex.test(val.name)) &#123;</span><br><span class="line">            result.push(val.name);</span><br><span class="line">        &#125; else if (regex.test(val.pinyin)) &#123;</span><br><span class="line">            result.push(val.pinyin);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="html代码部分："><a href="#html代码部分：" class="headerlink" title="html代码部分："></a>html代码部分：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;input&quot; class=&quot;txt&quot; type=&quot;text&quot; &gt;</span><br><span class="line">&lt;ul class=&quot;s&quot; id=&quot;show-area&quot;&gt;&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  <section id="comments">
+   <!-- 多说评论框 start -->
+<div id="ds-thread" class="ds-thread" data-thread-key="2015/09/24/jquery-搜索自动匹配关键字/" data-title="jquery 搜索自动匹配关键字" data-url="http://yoursite.com/2015/09/24/jquery-搜索自动匹配关键字/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+  </section>
+  
+  </div>
+</article>
+</section>
+
+      </div>
+      
+    </div>
+    
+
+  </div>
+</body>
+</html>

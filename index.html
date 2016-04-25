@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>yaobin&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="yaobin&apos;s blog 记录个人生活及工作中的经验及技术分享">
+<meta property="og:type" content="website">
+<meta property="og:title" content="yaobin's blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="yaobin's blog">
+<meta property="og:description" content="yaobin&apos;s blog 记录个人生活及工作中的经验及技术分享">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="yaobin's blog">
+<meta name="twitter:description" content="yaobin&apos;s blog 记录个人生活及工作中的经验及技术分享">
+  
+    <link rel="alternate" href="/atom.xml" title="yaobin&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  <link rel="icon" href="/css/favicon.ico">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="header-outer">
+    <div id="header-title">
+      <h3><img src="/css/images/logo.jpg" alt=""></h3>
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yaobin&#39;s blog</a>
+      </h1>
+    </div>
+    <div id="header-inner" class="inner">
+      <!-- <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div> -->
+      <nav id="main-nav">
+        <ul>
+          
+          <li><a class="main-nav-link" href="/">Home</a></li>
+          
+          <li><a class="main-nav-link" href="/archives">Archives</a></li>
+          
+        </ul> 
+      </nav>
+      <!-- <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav> -->
+    </div>
+    <div class="footer">
+      <div id="footer-info">
+        &copy; 2016 yaobin<br>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-在hexo中加入多说评论" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/25/在hexo中加入多说评论/">在hexo中加入多说评论</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2016/04/25/在hexo中加入多说评论/" class="article-date">
+  <time datetime="2016-04-25T01:30:55.000Z" itemprop="datePublished">2016-04-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>首先在根目录下_config.yml中增加duoshuo_shortname: 你站点的short_name，这里的short_name也就是你的二级域名。</p>
+<p>如果使用的是默认的landscape主题只需要在themes\landscape\layout_partial\article.ejs 添加一下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> &lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</span><br><span class="line">  &lt;section id=&quot;comments&quot;&gt;</span><br><span class="line">   &lt;!-- 多说评论框 start --&gt;</span><br><span class="line">&lt;div id=&quot;ds-thread&quot; class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.path %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= post.permalink %&gt;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;!-- 多说评论框 end --&gt;</span><br><span class="line">&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">var duoshuoQuery = &#123;short_name:&quot;datoublog&quot;&#125;;</span><br><span class="line">	(function() &#123;</span><br><span class="line">		var ds = document.createElement(&apos;script&apos;);</span><br><span class="line">		ds.type = &apos;text/javascript&apos;;ds.async = true;</span><br><span class="line">		ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</span><br><span class="line">		ds.charset = &apos;UTF-8&apos;;</span><br><span class="line">		(document.getElementsByTagName(&apos;head&apos;)[0] </span><br><span class="line">		 || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</span><br><span class="line">	&#125;)();</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;!-- 多说公共JS代码 end --&gt;</span><br><span class="line">  &lt;/section&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-web-app自适应方案rem" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/29/web-app自适应方案rem/">web app自适应方案rem</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2016/03/29/web-app自适应方案rem/" class="article-date">
+  <time datetime="2016-03-29T01:08:51.000Z" itemprop="datePublished">2016-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>rem是CSS3新引进来的一个度量单位。支持Mozilla Firefox 3.6+、Apple Safari 5+、Google Chrome、IE9+和Opera11+等浏览器。现在多在移动端上使用。</p>
+<h3 id="方案一："><a href="#方案一：" class="headerlink" title="方案一："></a>方案一：</h3><p>css设置全局字体大小：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">html&#123;font-size: 100px; &#125;</span><br><span class="line">body&#123;font-size: 0.14rem;&#125;</span><br></pre></td></tr></table></figure>
+<p>jquery计算当前浏览器全局字体大小：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(window).resize(function()&#123;</span><br><span class="line">    $(&apos;html&apos;).css(&#123;&apos;font-size&apos;:$(window).width()/3.2+&quot;px&quot;&#125;);</span><br><span class="line">&#125;);</span><br><span class="line">$(function()&#123; </span><br><span class="line">    $(&apos;html&apos;).css(&#123;&apos;font-size&apos;:$(window).width()/3.2+&quot;px&quot;&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>在使用过程中，假设是640像素的设计，测量宽度是 20px ,css中对应尺寸是 0.1rem。</p>
+<h3 id="方案二"><a href="#方案二" class="headerlink" title="方案二:"></a>方案二:</h3><p>css部分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">html&#123;</span><br><span class="line">    font-size: 1rem;</span><br><span class="line">&#125;</span><br><span class="line">body&#123;</span><br><span class="line">    font-size:0.24rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>jquery部分：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$(window).resize(function()&#123;</span><br><span class="line">    setRem(640);</span><br><span class="line">&#125;);</span><br><span class="line">$(function()&#123;</span><br><span class="line">    setRem(640);</span><br><span class="line">&#125;)</span><br><span class="line">function setRem(maxWidth)&#123;</span><br><span class="line">    var sw = $(window).width();</span><br><span class="line">    var radio = sw/maxWidth&gt;1?1:sw/maxWidth;</span><br><span class="line">    var perSize = radio*100 + &apos;px&apos;;</span><br><span class="line">    document.documentElement.style.fontSize=perSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>640表示设计图纸宽度为64像素，在使用过程中，测量宽度是 20px ,css中对应尺寸是 0.2rem。</p>
+
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-jquery-禁止右键及复制" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/25/jquery-禁止右键及复制/">jquery 禁止右键及复制</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2016/01/25/jquery-禁止右键及复制/" class="article-date">
+  <time datetime="2016-01-25T01:07:30.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>禁止右键的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;body&apos;).bind(&apos;contextmenu&apos;, function() &#123;</span><br><span class="line">    return false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>禁止复制的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;body&apos;).bind(&quot;selectstart&quot;,function()&#123;</span><br><span class="line">    return false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-css3透视perspective-3D图-3D长方体" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/04/css3透视perspective-3D图-3D长方体/">css3透视perspective,3D图(3D长方体)</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/11/04/css3透视perspective-3D图-3D长方体/" class="article-date">
+  <time datetime="2015-11-04T01:06:29.000Z" itemprop="datePublished">2015-11-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        *&#123;</span><br><span class="line">            margin:0;</span><br><span class="line">            padding:0;</span><br><span class="line">        &#125;</span><br><span class="line">        body&#123;</span><br><span class="line">            background-color:#ccc;</span><br><span class="line">        &#125;</span><br><span class="line">        .cube&#123;</span><br><span class="line">            margin:100px auto;</span><br><span class="line">            width:200px;</span><br><span class="line">            height:200px;</span><br><span class="line">            perspective: 250px;</span><br><span class="line">            -webkit-perspective: 250px;</span><br><span class="line">            transform-style:preserve-3d;/*指定元素的子元素在3D空间内定位*/</span><br><span class="line">            -webkit-transform-style:preserve-3d;</span><br><span class="line">            perspective-origin: -100% -50%;/*指定用户从哪个方向看过来*/</span><br><span class="line">            -webkit-perspective-origin: -100% -50%;</span><br><span class="line">        &#125;</span><br><span class="line">        .cube div&#123;</span><br><span class="line">            display:block;</span><br><span class="line">            position:absolute;</span><br><span class="line">            width:100px;</span><br><span class="line">            height:100px;</span><br><span class="line">            line-height:100px;</span><br><span class="line">            font-size:30px;</span><br><span class="line">            text-align:center;</span><br><span class="line">        &#125;</span><br><span class="line">        .front&#123;</span><br><span class="line">            border:none;</span><br><span class="line">            background:rgba(0, 0, 0, 0.3);</span><br><span class="line">            transform:translateZ(50px);</span><br><span class="line">            -webkit-transform:translateZ(50px);</span><br><span class="line">        &#125;</span><br><span class="line">        .back&#123;</span><br><span class="line">            background:rgba(0, 225, 0, 1);</span><br><span class="line">            transform:translateZ(-50px);</span><br><span class="line">            -webkit-transform:translateZ(-50px);</span><br><span class="line">        &#125;</span><br><span class="line">        .right&#123;</span><br><span class="line">            background:rgba(196, 0, 0, 0.7);</span><br><span class="line">            transform:rotateY(90deg) translateZ(50px);</span><br><span class="line">            -webkit-transform:rotateY(90deg) translateZ(50px);</span><br><span class="line">        &#125;</span><br><span class="line">        .left&#123;</span><br><span class="line">            background:rgba(0, 0, 196, 0.7);</span><br><span class="line">            transform:rotateY(-90deg) translateZ(50px);</span><br><span class="line">            -webkit-transform:rotateY(-90deg) translateZ(50px);</span><br><span class="line">        &#125;</span><br><span class="line">        .top&#123;</span><br><span class="line">            background:rgba(196, 196, 0, 0.7);</span><br><span class="line">            transform:rotateX(90deg) translateZ(50px);</span><br><span class="line">            -webkit-transform:rotateX(90deg) translateZ(50px);</span><br><span class="line">        &#125;</span><br><span class="line">        .bottom&#123;</span><br><span class="line">            background:rgba(196, 0, 196, 0.7);</span><br><span class="line">            transform:rotateX(90deg) translateZ(50px);</span><br><span class="line">            -webkit-transform:rotateX(-90deg) translateZ(50px);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;cube&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;front&quot;&gt;1&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;back&quot;&gt;2&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;right&quot;&gt;3&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;left&quot;&gt;4&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;top&quot;&gt;5&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;bottom&quot;&gt;6&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-html5移动初模板" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/23/html5移动初模板/">html5移动初模板</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/10/23/html5移动初模板/" class="article-date">
+  <time datetime="2015-10-23T01:05:01.000Z" itemprop="datePublished">2015-10-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no, email=no&quot;/&gt;</span><br><span class="line">    &lt;meta name=&quot;renderer&quot; content=&quot;webkit&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot;&gt;</span><br><span class="line">    &lt;title&gt;document&lt;/title&gt;</span><br><span class="line">    &lt;meta name=&quot;keywords&quot; content=&quot;&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-javerscript-获取class" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/21/javerscript-获取class/">javerscript 获取class</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/10/21/javerscript-获取class/" class="article-date">
+  <time datetime="2015-10-21T01:03:22.000Z" itemprop="datePublished">2015-10-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">var getByClass = function (oParent, cname) &#123;</span><br><span class="line">    if (oParent == null) &#123;</span><br><span class="line">        oParent = document;</span><br><span class="line">    &#125;</span><br><span class="line">    if (oParent.getElementsByClassName) &#123;</span><br><span class="line">        return oParent.getElementsByClassName(cname);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        var all = oParent.getElementsByTagName(&quot;*&quot;);</span><br><span class="line">        var j = all.length;</span><br><span class="line">        var theClass = new RegExp(&quot;(^|\\s)&quot; + cname + &quot;(\\s|$)&quot;);</span><br><span class="line">        var result = new Array();</span><br><span class="line">        for (var i = 0; i &lt; j; i++) &#123;</span><br><span class="line">            var allClass = all[i].className;</span><br><span class="line">            if (theClass.test(allClass)) &#123;</span><br><span class="line">                result.push(all[i])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-复选框全选与反选" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/19/复选框全选与反选/">复选框全选与反选</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/10/19/复选框全选与反选/" class="article-date">
+  <time datetime="2015-10-19T01:01:28.000Z" itemprop="datePublished">2015-10-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;js/jquery-2.1.1.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(document).ready(function()&#123;</span><br><span class="line">            $(&quot;#CheckAll&quot;).on(&quot;change&quot;,function()&#123;</span><br><span class="line">                if($(&quot;#CheckAll&quot;).prop(&quot;checked&quot;))&#123;</span><br><span class="line">                    $(&apos;input[name=subBox]&apos;).prop(&apos;checked&apos;, true); </span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    $(&apos;input[name=subBox]&apos;).prop(&apos;checked&apos;, false); </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            $(&quot;.chec&quot;)</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;check&quot;&gt; </span><br><span class="line">        &lt;input id=&quot;CheckAll&quot; type=&quot;checkbox&quot; /&gt;全选 </span><br><span class="line">        &lt;input name=&quot;subBox&quot; type=&quot;checkbox&quot; /&gt;</span><br><span class="line">        &lt;input name=&quot;subBox&quot; type=&quot;checkbox&quot; /&gt;</span><br><span class="line">        &lt;input name=&quot;subBox&quot; type=&quot;checkbox&quot; /&gt;</span><br><span class="line">        &lt;input name=&quot;subBox&quot; type=&quot;checkbox&quot; /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;按钮&quot; /&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-AngularJS-购物车简单案例" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/17/AngularJS-购物车简单案例/">AngularJS 购物车简单案例</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/10/17/AngularJS-购物车简单案例/" class="article-date">
+  <time datetime="2015-10-17T09:16:19.000Z" itemprop="datePublished">2015-10-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset = &quot;utf-8&quot;&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot; src = &quot;js/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">           .item&#123;</span><br><span class="line">                height: 200px;</span><br><span class="line">                width:100px;</span><br><span class="line">                margin:5px;</span><br><span class="line">                border:1px solid #ccc;</span><br><span class="line">                float:left;</span><br><span class="line">           &#125;</span><br><span class="line">        &lt;/style&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body ng-app = &quot;mapp&quot; ng-controller = &quot;mctrl&quot;&gt;</span><br><span class="line">        &lt;!--</span><br><span class="line">        &lt;div class = &quot;list&quot;&gt;</span><br><span class="line">            &lt;div class = &quot;item&quot; ng-repeat = &quot;item in items&quot;&gt;</span><br><span class="line">                &lt;p class = &quot;item-name&quot;&gt;&lt;span&gt;商品名:&lt;/span&gt;&#123;&#123;item.name&#125;&#125;&lt;/p&gt;</span><br><span class="line">                &lt;p class = &quot;item-price&quot;&gt;&lt;span&gt;价格:&lt;/span&gt;&#123;&#123;item.price|currency:&quot;￥&quot;&#125;&#125;&lt;/p&gt;</span><br><span class="line">                &lt;input type = &quot;button&quot; ng-click = &quot;buy($index)&quot; value = &quot;购买&quot;&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        --&gt;</span><br><span class="line">        &lt;div class = &quot;item-car&quot;&gt;</span><br><span class="line">            &lt;p ng-repeat = &quot;item in items&quot;&gt;</span><br><span class="line">                &lt;span&gt;&#123;&#123;item.name&#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;span&gt;&#123;&#123;item.price|currency:&quot;单价&quot;&#125;&#125;&lt;/span&gt;</span><br><span class="line">                &lt;input type = &quot;button&quot; value = &quot;-&quot; ng-click = &quot;minus($index)&quot;/&gt;</span><br><span class="line">                &lt;input type = &quot;text&quot; ng-model = &quot;varlist.itemNum[$index]&quot;&gt;</span><br><span class="line">                &lt;input type = &quot;button&quot; value = &quot;+&quot; ng-click = &quot;add($index)&quot;/&gt;</span><br><span class="line">                &lt;span&gt;单件总价:&#123;&#123;item.price*varlist.itemNum[$index]|currency:&quot;￥&quot;&#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">            &lt;p&gt;总价：&#123;&#123;varlist.total|number:2&#125;&#125;&lt;/p&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;span style=&quot;background-color: #339966;&quot;&gt;&lt;/span&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">            var app = angular.module(&quot;mapp&quot;, []);</span><br><span class="line">            app.controller(&quot;mctrl&quot;, function($scope) &#123;</span><br><span class="line">                // 数据源</span><br><span class="line">                $scope.items = [&#123;</span><br><span class="line">                    &quot;name&quot;: &quot;王老吉&quot;,</span><br><span class="line">                    &quot;price&quot;: 4</span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    &quot;name&quot;: &quot;老干妈&quot;,</span><br><span class="line">                    &quot;price&quot;: 7.5</span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    &quot;name&quot;: &quot;臭豆腐&quot;,</span><br><span class="line">                    &quot;price&quot;: 7.32</span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    &quot;name&quot;: &quot;饼干&quot;,</span><br><span class="line">                    &quot;price&quot;: 22</span><br><span class="line">                &#125;, ];</span><br><span class="line">                var len = $scope.items.length;</span><br><span class="line">                var arr = [];</span><br><span class="line">                // 循环为数组赋值</span><br><span class="line">                for (var i = 0; i &lt; len; i++) &#123;</span><br><span class="line">                    arr[i] = 0;</span><br><span class="line">                &#125;</span><br><span class="line">                // 检测是否变化，为了总价能够改变</span><br><span class="line">                $scope.$watch(&quot;varlist.itemNum&quot;, function() &#123;</span><br><span class="line">                    getTotal();</span><br><span class="line">                &#125;, true);</span><br><span class="line">                // 定义变量</span><br><span class="line">                $scope.varlist = &#123;</span><br><span class="line">                    itemNum: arr,</span><br><span class="line">                    total: 0</span><br><span class="line">                &#125;</span><br><span class="line">                // 购物的时候操作</span><br><span class="line">                $scope.buy = function($index) &#123;</span><br><span class="line">                    $scope.varlist.itemNum[$index]++;</span><br><span class="line">                    getTotal();</span><br><span class="line">                &#125;</span><br><span class="line">                // -----</span><br><span class="line">                $scope.minus = function($index) &#123;</span><br><span class="line">                    if ($scope.varlist.itemNum[$index] == 0) &#123;</span><br><span class="line">                        return;</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        $scope.varlist.itemNum[$index]--;</span><br><span class="line">                        getTotal();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                // ++++</span><br><span class="line">                $scope.add = function($index) &#123;</span><br><span class="line">                    $scope.varlist.itemNum[$index]++;</span><br><span class="line">                    getTotal();</span><br><span class="line">                &#125;</span><br><span class="line">                // 计算总价</span><br><span class="line">                var getTotal = function($index) &#123;</span><br><span class="line">                    $scope.varlist.total = 0;</span><br><span class="line">                    for (var j = 0; j &lt; len; j++) &#123;</span><br><span class="line">                        $scope.varlist.total = $scope.varlist.total + $scope.varlist.itemNum[j] * $scope.items[j].price;</span><br><span class="line">                    &#125;</span><br><span class="line">                    return $scope.varlist.total;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">        &lt;span style=&quot;background-color: #339966;&quot;&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-转-图片上传的demo，支持移动，缩放，裁剪" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/13/转-图片上传的demo，支持移动，缩放，裁剪/">[转]图片上传的demo，支持移动，缩放，裁剪</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/10/13/转-图片上传的demo，支持移动，缩放，裁剪/" class="article-date">
+  <time datetime="2015-10-13T09:14:35.000Z" itemprop="datePublished">2015-10-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>某大神写的图片上传的demo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">&lt;!doctype html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;link  href=&quot;/domo/cropper.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;script src=&quot;/domo/lrz.bundle.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;/domo/cropper.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Upload Demo&lt;/h1&gt;</span><br><span class="line">&lt;input type=&quot;file&quot; id=&apos;input&apos;&gt;</span><br><span class="line">&lt;button id=&quot;crop&quot;&gt;Crop&lt;/button&gt;</span><br><span class="line">&lt;div id=&quot;img-preview&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;&quot;  id=&quot;showImage&quot; alt=&quot;&quot;/&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"></span><br><span class="line">    var $ = function(el)&#123;</span><br><span class="line">        return document.querySelector(el);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    var result = $(&apos;#img-preview&apos;),</span><br><span class="line">        preview = $(&apos;#showImage&apos;),</span><br><span class="line">        cropOption = &#123;</span><br><span class="line">            aspectRatio: 1 / 1,</span><br><span class="line">            guides: false,</span><br><span class="line">            cropBoxResizable: false,</span><br><span class="line">            cropBoxMovable: false,</span><br><span class="line">            dragCrop: false,</span><br><span class="line">            minContainerWidth: 200,</span><br><span class="line">            minContainerHeight: 200</span><br><span class="line">        &#125;,</span><br><span class="line">        cropper = null;</span><br><span class="line"></span><br><span class="line">    // 预览</span><br><span class="line">    $(&apos;#input&apos;).onchange = function (e) &#123;</span><br><span class="line">        var file = this.files[0];</span><br><span class="line">        lrz(file,&#123;width: 600&#125;)</span><br><span class="line">            .then(function (rst) &#123;</span><br><span class="line">                preview.style.display = &apos;block&apos;;</span><br><span class="line">                preview.onload = function () &#123;</span><br><span class="line">                    cropper = new Cropper(preview,cropOption);</span><br><span class="line">                &#125;;</span><br><span class="line">                preview.src = rst.base64;</span><br><span class="line">            &#125;)</span><br><span class="line">            .catch(function (err) &#123;</span><br><span class="line"></span><br><span class="line">            &#125;)</span><br><span class="line">            .always(function () &#123;</span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    // 裁剪</span><br><span class="line">    $(&apos;#crop&apos;).onclick = function()&#123;</span><br><span class="line">        var img = new Image();</span><br><span class="line">        img.onload = function () &#123;</span><br><span class="line">            $(&apos;body&apos;).appendChild(img);</span><br><span class="line">            // 销毁</span><br><span class="line">            cropper.destroy();</span><br><span class="line">            preview.style.display = &apos;none&apos;;</span><br><span class="line">        &#125;;</span><br><span class="line">        img.src = cropper</span><br><span class="line">            .getCroppedCanvas(cropOption, &#123;</span><br><span class="line">                width: 200,</span><br><span class="line">                height: 200</span><br><span class="line">            &#125;)</span><br><span class="line">            .toDataURL(&quot;image/jpeg&quot;, 0.9);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-js中cookie的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/10/js中cookie的使用/">js中cookie的使用</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/10/10/js中cookie的使用/" class="article-date">
+  <time datetime="2015-10-10T09:10:53.000Z" itemprop="datePublished">2015-10-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>在网站中，很多地方需要使用到cookie，例如用户登录状态，用户下次访问时，保存上一次操作状态等。 cookie是浏览器提供的一种机制，它将document 对象的cookie属性提供给JavaScript。可以由JavaScript对其进行控制，而并不是JavaScript本身的性质。cookie是存于用户硬盘的一个文件，这个文件通常对应于一个域名，当浏览器再次访问这个域名时，便使这个cookie可用。因此，cookie可以跨越一个域名下的多个网页，但不能跨越多个域名使用。</p>
+<p>cookie的缺点主要集中于安全性和隐私保护。主要包括以下几种：</p>
+<ul>
+<li>cookie可能被禁用。当用户非常注重个人隐私保护时，他很可能禁用浏览器的cookie功能；</li>
+<li>cookie是与浏览器相关的。这意味着即使访问的是同一个页面，不同浏览器之间所保存的cookie也是不能互相访问的；</li>
+<li>cookie可能被删除。因为每个cookie都是硬盘上的一个文件，因此很有可能被用户删除；</li>
+<li>cookie安全性不够高。所有的cookie都是以纯文本的形式记录于文件中，因此如果要保存用户名密码等信息时，最好事先经过加密处理。</li>
+</ul>
+<p>下面是js设置网站cookie和读取网站cookie的简单用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//读取cookie</span><br><span class="line">var res = document.cookie.substring(5);</span><br><span class="line">//alert(res); //输出：www.yaobblog.com</span><br><span class="line"></span><br><span class="line">//判断浏览器是都有当前网站cookie信息</span><br><span class="line">if(res != &quot;www.yaobblog.com&quot;)&#123;</span><br><span class="line">    </span><br><span class="line">    //添加 cookie</span><br><span class="line">    var oDate = new Date();</span><br><span class="line">    oDate.setDate(oDate.getDate + 30); //设置30天以后</span><br><span class="line"></span><br><span class="line">    //设置网站cookie 30天后失效</span><br><span class="line">    document.cookie = &quot;name=www.yaobblog.com;expires=&quot; + oDate; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-前端构建工具gulp入门教程" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/28/前端构建工具gulp入门教程/">前端构建工具gulp入门教程</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/09/28/前端构建工具gulp入门教程/" class="article-date">
+  <time datetime="2015-09-28T08:14:41.000Z" itemprop="datePublished">2015-09-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h3 id="第1步：安装Node"><a href="#第1步：安装Node" class="headerlink" title="第1步：安装Node"></a>第1步：安装Node</h3><p>首先，最基本也最重要的是，我们需要搭建node环境。访问 nodejs.org，然后点击大大的绿色的 install 按钮，下载完成后直接运行程序，就一切准备就绪。npm会随着安装包一起安装，稍后会用到它。</p>
+<p>为了确保Node已经正确安装，我们执行几个简单的命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>因为国内访问外网都很慢，甚至不能访问！</p>
+<p>淘宝针对国内下载npm库缓慢的问题，使用建立自己的cnpm库，可以很方便使用在公司内部使用，命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
+<p>如果这命令没有得到返回，可能node就没有安装正确，进行重装。安装淘宝镜像后，以后下载npm库，都用cnpm代替，下载会快很多。</p>
+<h3 id="第2步：安装gulp"><a href="#第2步：安装gulp" class="headerlink" title="第2步：安装gulp"></a>第2步：安装gulp</h3><p>首先我们要全局安装一遍：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g gulp</span><br></pre></td></tr></table></figure>
+<p>运行时注意查看命令行有没有错误信息，安装完成后，你可以使用下面的命令查看gulp的版本号以确保gulp已经被正确安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gulp -v</span><br></pre></td></tr></table></figure>
+<p>接着我们要进去到项目的根目录再安装一遍</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install gulp --save-dev</span><br></pre></td></tr></table></figure>
+<h3 id="第3步：新建gulpfile-js文件"><a href="#第3步：新建gulpfile-js文件" class="headerlink" title="第3步：新建gulpfile.js文件"></a>第3步：新建gulpfile.js文件</h3><ul>
+<li>sass的编译（gulp-sass）</li>
+<li>自动添加css前缀（gulp-autoprefixer）</li>
+<li>压缩css（gulp-minify-css）</li>
+<li>js代码校验（gulp-jshint）</li>
+<li>合并js文件（gulp-concat）</li>
+<li>压缩js代码（gulp-uglify）</li>
+<li>压缩图片（gulp-imagemin）</li>
+<li>自动刷新页面（gulp-livereload）</li>
+<li>图片缓存，只有图片替换了才压缩（gulp-cache）</li>
+<li>更改提醒（gulp-notify）</li>
+</ul>
+<p>安装这些插件需要运行如下命令（也可以拆开单独安装）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install gulp-sass gulp-autoprefixer gulp-minify-css gulp-jshint gulp-concat gulp-uglify gulp-imagemin gulp-notify gulp-rename gulp-livereload gulp-cache --save-dev</span><br></pre></td></tr></table></figure>
+<p>接着我们要创建一个gulpfile.js在根目录下，gulp只有四个API：<br>task，watch，src，和 dest</p>
+<ul>
+<li><strong>task</strong>这个API用来创建任务，在命令行下可以输入 gulp test 来执行test的任务。</li>
+<li><strong>watch</strong>这个API用来监听任务。</li>
+<li><strong>src</strong>这个API设置需要处理的文件的路径，可以是多个文件以数组的形式[main.scss, vender.scss]，也可以是正则表达式/<em>*/</em>.scss。</li>
+<li><strong>dest</strong>这个API设置生成文件的路径，一个任务可以有多个生成路径，一个可以输出未压缩的版本，另一个可以输出压缩后的版本。</li>
+</ul>
+<h3 id="第4步：编辑gulpfile-js文件"><a href="#第4步：编辑gulpfile-js文件" class="headerlink" title="第4步：编辑gulpfile.js文件"></a>第4步：编辑gulpfile.js文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">//加载插件</span><br><span class="line">var gulp = require(&apos;gulp&apos;),</span><br><span class="line">    sass = require(&apos;gulp-sass&apos;),//sass的编译</span><br><span class="line">    autoprefixer = require(&apos;gulp-autoprefixer&apos;),//使用Autoprefixer来补全浏览器兼容的css</span><br><span class="line">    minifycss = require(&apos;gulp-minify-css&apos;),//压缩css</span><br><span class="line">    jshint = require(&apos;gulp-jshint&apos;),//js代码校验</span><br><span class="line">    uglify = require(&apos;gulp-uglify&apos;),//压缩js代码</span><br><span class="line">    imagemin = require(&apos;gulp-imagemin&apos;),//压缩图片</span><br><span class="line">    rename = require(&apos;gulp-rename&apos;),</span><br><span class="line">    concat = require(&apos;gulp-concat&apos;),//合并js文件</span><br><span class="line">    notify = require(&apos;gulp-notify&apos;),</span><br><span class="line">    cache = require(&apos;gulp-cache&apos;),//图片缓存，只有图片替换了才压缩</span><br><span class="line">    livereload = require(&apos;gulp-livereload&apos;),//自动刷新页面</span><br><span class="line">    watch = require(&apos;gulp-watch&apos;);</span><br><span class="line"></span><br><span class="line">// 编译sass、自动添加css前缀和压缩。Styles任务</span><br><span class="line">gulp.task(&apos;styles&apos;, function () &#123;</span><br><span class="line">    return gulp.src(&apos;stylesheets/*.scss&apos;)</span><br><span class="line">        .pipe(sass())</span><br><span class="line">        .pipe(autoprefixer(&apos;last 2 version&apos;, &apos;safari 5&apos;, &apos;ie 8&apos;, &apos;ie 9&apos;, &apos;opera 12.1&apos;, &apos;ios 6&apos;, &apos;android 4&apos;))//添加前缀</span><br><span class="line">        .pipe(gulp.dest(&apos;assets/css/&apos;))//保存未压缩文件到我们指定的目录下面</span><br><span class="line">        .pipe(rename(&#123;</span><br><span class="line">            suffix: &apos;.min&apos;//给文件添加.min后缀</span><br><span class="line">        &#125;))</span><br><span class="line">        .pipe(minifycss())//压缩样式文件</span><br><span class="line">        .pipe(gulp.dest(&apos;assets/css/&apos;))//输出压缩文件到指定目录</span><br><span class="line">        .pipe(notify(&#123;</span><br><span class="line">            message: &apos;Styles task complete&apos;//提醒任务完成</span><br><span class="line">        &#125;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//  js代码校验、合并和压缩 Scripts。 Scripts任务</span><br><span class="line">gulp.task(&apos;scripts&apos;, function () &#123;</span><br><span class="line">    return gulp.src(&apos;javescript/*.js&apos;) //js代码校验</span><br><span class="line">        .pipe(jshint())</span><br><span class="line">        .pipe(jshint.reporter(&apos;default&apos;))</span><br><span class="line">        .pipe(concat(&apos;all.js&apos;))//js代码合并</span><br><span class="line">        .pipe(rename(&#123;</span><br><span class="line">            suffix: &apos;.min&apos;//给文件添加.min后缀</span><br><span class="line">        &#125;))</span><br><span class="line">        .pipe(uglify())//压缩脚本文件</span><br><span class="line">        .pipe(gulp.dest(&apos;assets/js/&apos;))//输出压缩文件到指定目录</span><br><span class="line">        .pipe(notify(&#123;</span><br><span class="line">            message: &apos;Scripts task complete&apos;//提醒任务完成</span><br><span class="line">        &#125;));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 图片压缩。Images</span><br><span class="line">gulp.task(&apos;images&apos;, function () &#123;</span><br><span class="line">    return gulp.src(&apos;assets/images/*&apos;)//检测图片路径</span><br><span class="line">        .pipe(cache(imagemin(&#123;</span><br><span class="line">            optimizationLevel: 3,</span><br><span class="line">            progressive: true,</span><br><span class="line">            interlaced: true</span><br><span class="line">        &#125;)))</span><br><span class="line">        .pipe(gulp.dest(&apos;assets/images&apos;))</span><br><span class="line">        .pipe(notify(&#123;</span><br><span class="line">            message: &apos;Images task complete&apos;</span><br><span class="line">        &#125;));</span><br><span class="line">&#125;);</span><br><span class="line">// Default task</span><br><span class="line">gulp.task(&apos;default&apos;, function () &#123;</span><br><span class="line">    gulp.start(&apos;styles&apos;, &apos;scripts&apos;, &apos;images&apos;);</span><br><span class="line">&#125;);</span><br><span class="line">// 事件监听。Watch</span><br><span class="line">gulp.task(&apos;watch&apos;, function () &#123;</span><br><span class="line">    gulp.watch(&apos;stylesheets/*.scss&apos;, [&apos;styles&apos;]);</span><br><span class="line">    gulp.watch(&apos;javascript/*.js&apos;, [&apos;scripts&apos;]);</span><br><span class="line">    gulp.watch(&apos;assets/images/*&apos;, [&apos;images&apos;]);</span><br><span class="line">    livereload.listen();</span><br><span class="line">    gulp.watch([&apos;assets/*&apos;]).on(&apos;change&apos;, livereload.changed);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-jquery-搜索自动匹配关键字" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/24/jquery-搜索自动匹配关键字/">jquery 搜索自动匹配关键字</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/09/24/jquery-搜索自动匹配关键字/" class="article-date">
+  <time datetime="2015-09-24T06:23:07.000Z" itemprop="datePublished">2015-09-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>在项目中，可能会碰到搜索功能自动匹配关键字功能，开始也不会，后经过某位大神提供代码实现了搜索自动匹配功能；<br>实例使用的是模拟服务器发送json数据方式来实现功能；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var json = [</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;搜索a&quot;,</span><br><span class="line">        &quot;pinyin&quot;: &quot;aaa&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;搜索b&quot;,</span><br><span class="line">        &quot;pinyin&quot;: &quot;bcd&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;name&quot;: &quot;数据&quot;,</span><br><span class="line">        &quot;pinyin&quot;: &quot;abc&quot;</span><br><span class="line">    &#125;</span><br><span class="line">       // 。。。。。。。。</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<h3 id="js代码："><a href="#js代码：" class="headerlink" title="js代码："></a>js代码：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#input&apos;).on(&apos;keyup&apos;, function () &#123;</span><br><span class="line">    var arr3=[];//匹配出来的所有对象</span><br><span class="line">    var search_str = $(this).val();</span><br><span class="line">    if(search_str !=&quot;&quot;)&#123; //判断当前搜索框非空</span><br><span class="line">        $(&quot;.search .s&quot;).css(&quot;display&quot;,&quot;block&quot;);//搜索框非空时，显示下拉搜索框</span><br><span class="line">        </span><br><span class="line">        var search_result = findInJsonPin(search_str, json);</span><br><span class="line">        var $show_area = $(&apos;#show-area&apos;);</span><br><span class="line">        $show_area.empty();</span><br><span class="line">        search_result.forEach(function (val) &#123;</span><br><span class="line">            $show_area.append(&apos;&lt;li&gt;&apos; + val + &apos;&lt;/li&gt;&apos;);//添加匹配出来的对象</span><br><span class="line">            arr3.push(val);//将所有匹配的对象存放到数组</span><br><span class="line">        &#125;);</span><br><span class="line">        //点击匹配的对象添加到输入框，并隐藏下拉搜索框</span><br><span class="line">        $(&quot;#show-area&quot;).on(&quot;click&quot;,&quot;li&quot;,function()&#123;</span><br><span class="line">            $(&apos;#input&apos;).val(arr3[$(this).index()]);</span><br><span class="line">            $(&quot;.search .s&quot;).css(&quot;display&quot;,&quot;none&quot;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        $(&quot;.search .s&quot;).css(&quot;display&quot;,&quot;none&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">function findInJson(search_str, json) &#123;</span><br><span class="line">    var result = [];</span><br><span class="line">    json.forEach(function (val) &#123;</span><br><span class="line">        var regex = new RegExp(search_str, &apos;i&apos;);</span><br><span class="line">        if (regex.test(val.name)) &#123;</span><br><span class="line">            result.push(val.name);</span><br><span class="line">        &#125; else if (regex.test(val.pinyin)) &#123;</span><br><span class="line">            result.push(val.pinyin);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="html代码部分："><a href="#html代码部分：" class="headerlink" title="html代码部分："></a>html代码部分：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input id=&quot;input&quot; class=&quot;txt&quot; type=&quot;text&quot; &gt;</span><br><span class="line">&lt;ul class=&quot;s&quot; id=&quot;show-area&quot;&gt;&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-jquery-ajax获取txt数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/23/jquery-ajax获取txt数据/">jquery ajax获取txt数据</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/09/23/jquery-ajax获取txt数据/" class="article-date">
+  <time datetime="2015-09-23T06:18:09.000Z" itemprop="datePublished">2015-09-23</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p><strong>JSON</strong>(JavaScript Object Notation)是一种轻量级的数据交换格式。JSON存储了以“Key-Value”为结构的数据。有时候我们需要读取JSON格式的数据文件，在jQuery中可以使用Ajax或者 $.getJSON()方法实现。<br>txt假设为服务器发送的数据，以json格式为例，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;one&quot;: &quot;aaa&quot;,</span><br><span class="line">  &quot;two&quot;: &quot;bbb&quot;,</span><br><span class="line">  &quot;three&quot;: &quot;ccc&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-ajax方法："><a href="#1-ajax方法：" class="headerlink" title="1.ajax方法："></a>1.ajax方法：</h3><p>js获取txt文本，转化成json数据，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;</span><br><span class="line">    var ajax = $.ajax(&#123;</span><br><span class="line">        url:&quot;txt.txt&quot;,</span><br><span class="line">        dataType: &apos;json&apos;,</span><br><span class="line">        success:function(data)&#123;</span><br><span class="line">            console.log(data);//打印数据</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="2-getJSON方法："><a href="#2-getJSON方法：" class="headerlink" title="2.getJSON方法："></a>2.getJSON方法：</h3><p>参数:</p>
+<ul>
+<li>url,[data],[callback]String,Map,FunctionV1.0</li>
+<li>url:发送请求地址。</li>
+<li>data:待发送 Key/value 参数。</li>
+<li>callback:载入成功时回调函数。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;</span><br><span class="line">    $.getJSON(&quot;txt.txt&quot;,function(data)&#123;</span><br><span class="line">        console.log(data);//打印数据</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-css3-鼠标滑过背景图片，图片围绕圆心旋转的效果" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/22/css3-鼠标滑过背景图片，图片围绕圆心旋转的效果/">css3 鼠标滑过背景图片，图片围绕圆心旋转的效果</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/09/22/css3-鼠标滑过背景图片，图片围绕圆心旋转的效果/" class="article-date">
+  <time datetime="2015-09-22T06:12:06.000Z" itemprop="datePublished">2015-09-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>鼠标滑过背景图片，图片围绕圆心旋转，鼠标移出图片就停止转动。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">img&#123;</span><br><span class="line">    transition:transform 0.8s;</span><br><span class="line">    -moz-transition: -moz-transform 0.8s; /* Firefox 4 */</span><br><span class="line">    -webkit-transition: -webkit-transform 0.8s; /* Safari and Chrome */</span><br><span class="line">    -o-transition: -o-transform 0.8s; /* Opera */</span><br><span class="line">&#125;</span><br><span class="line">img:hover&#123;</span><br><span class="line">    transform:rotate(180deg);</span><br><span class="line">    -ms-transform:rotate(180deg);   /* IE 9 */</span><br><span class="line">    -moz-transform:rotate(180deg);  /* Firefox */</span><br><span class="line">    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */</span><br><span class="line">    -o-transform:rotate(180deg);    /* Opera */</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-html行内元素-和-块状元素-总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/22/html行内元素-和-块状元素-总结/">html行内元素 和 块状元素 总结</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/09/22/html行内元素-和-块状元素-总结/" class="article-date">
+  <time datetime="2015-09-22T06:00:46.000Z" itemprop="datePublished">2015-09-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <h3 id="块级元素和内联元素的区别："><a href="#块级元素和内联元素的区别：" class="headerlink" title="块级元素和内联元素的区别："></a>块级元素和内联元素的区别：</h3><p><strong>块级：</strong>块级元素会独占一行，默认情况下宽度自动填满其父元素宽度；块级元素可以设置宽高；<br><strong>行内：</strong>行内元素不会独占一行，相邻的行内元素会排在同一行。其宽度随内容的变化而；行内元素不可以设置宽高</p>
+<h3 id="块状元素"><a href="#块状元素" class="headerlink" title="块状元素"></a>块状元素</h3><ul>
+<li><p>address 地址</p>
+</li>
+<li><p>blockquote 块引用</p>
+</li>
+<li><p>center 举中对齐块</p>
+</li>
+<li><p>dir 目录列表</p>
+</li>
+<li><p>div 常用块级容易，也是CSS layout的主要标签</p>
+</li>
+<li><p>dl 定义列表</p>
+</li>
+<li><p>fieldset form控制组</p>
+</li>
+<li><p>form 交互表单h1 标题</p>
+</li>
+<li><p>h2 副标题</p>
+</li>
+<li><p>h3 3级标题</p>
+</li>
+<li><p>h4 4级标题</p>
+</li>
+<li><p>h5 5级标题</p>
+</li>
+<li><p>h6 6级标题</p>
+</li>
+<li><p>hr 水平分隔线</p>
+</li>
+<li><p>isindex input prompt</p>
+</li>
+<li><p>menu 菜单列表</p>
+</li>
+<li><p>noframes frames可选内容，（对于不支持frame的浏览器显示此区块内容</p>
+</li>
+<li><p>noscript 可选脚本内容（对于不支持script的浏览器显示此内容）</p>
+</li>
+<li><p>ol 有序表单</p>
+</li>
+<li><p>p 段落</p>
+</li>
+<li><p>pre 格式化文本</p>
+</li>
+<li><p>table 表格</p>
+</li>
+<li><p>ul 无序列表</p>
+</li>
+</ul>
+<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><ul>
+<li>a 锚点</li>
+<li>abbr - 缩写</li>
+<li>acronym - 首字</li>
+<li>b - 粗体(不推荐)</li>
+<li>bdo - bidi override</li>
+<li>big - 大字体</li>
+<li>br - 换行</li>
+<li>cite - 引用</li>
+<li>code - 计算机代码(在引用源码的时候需要)</li>
+<li>dfn - 定义字段</li>
+<li>em - 强调</li>
+<li>font - 字体设定(不推荐)</li>
+<li>i - 斜体</li>
+<li>img - 图片</li>
+<li>input - 输入框</li>
+<li>kbd - 定义键盘文本</li>
+<li>label - 表格标签</li>
+<li>q - 短引用</li>
+<li>s - 中划线(不推荐)</li>
+<li>samp - 定义范例计算机代码</li>
+<li>select - 项目选择</li>
+<li>small - 小字体文本</li>
+<li>strike - 中划线</li>
+<li>strong - 粗体强调</li>
+<li>sub - 下标</li>
+<li>sup - 上标</li>
+<li>tt - 电传文本</li>
+<li>u - 下划线</li>
+<li>var - 定义变量</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-font-awesome图标字体库和CSS框架的使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/10/font-awesome图标字体库和CSS框架的使用/">font-awesome图标字体库和CSS框架的使用</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/09/10/font-awesome图标字体库和CSS框架的使用/" class="article-date">
+  <time datetime="2015-09-10T05:40:09.000Z" itemprop="datePublished">2015-09-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>Font Awesome 是一套专门为 Twitter Boostrap 设计的图标字体库。这标字体集几乎囊括了网页中可能用到的所有图标，除了包含 Twitter Boostrap 的默认图标外，还有社交收集图标、Web 应用法度图标和编辑器图标等等。Font Awesome为您提供可缩放的矢量图标，您可以使用CSS所提供的所有特性对它们进行更改，包括：大小、颜色、阴影或者其它任何支持的效果。</p>
+<p>参考网站：<a href="http://fontawesome.dashgame.com/" title="fontawesome图标字体库" target="_blank" rel="external">fontawesome</a></p>
+<ul>
+<li><p>下载最新 Font Awesome 插件；</p>
+</li>
+<li><p>把css和fonts文件夹引入到项目中；</p>
+</li>
+<li><p>在页面上调用css样式，使用方法，例如：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class=&quot;fa fa-camera-retro&quot;&gt;&lt;/i&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/01/hello-world/">第一篇文章</a>
+    </h1>
+  
+
+      </header>
+  
+  <div class="article-meta">
+    <a href="/2015/01/01/hello-world/" class="article-date">
+  <time datetime="2014-12-31T16:00:00.000Z" itemprop="datePublished">2015-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    
+  </div>
+</article>
+
+  
+
+</section>
+
+      </div>
+      
+    </div>
+    
+
+  </div>
+</body>
+</html>
