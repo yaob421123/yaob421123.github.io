@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0cf8e7"],{"63e9":function(t,n,e){"use strict";e.r(n);var o=function(){var t=this,n=t.$createElement,e=t._self._c||n;return e("section",[e("h2",[t._v("更新日志")]),e("h3",[t._v("0.0.1 ~ 1.0.0")]),e("ul",[e("li",[t._v("新增 Button 组件 "),e("router-link",{attrs:{to:"/button"}},[t._v("#Button")])],1),e("li",[t._v("逐步完善中......")])])])},l=[],u=e("25c1"),c={},i=Object(u["a"])(c,o,l,!1,null,null,null);i.options.__file="changelog.md";n["default"]=i.exports}}]);
+//# sourceMappingURL=chunk-2d0cf8e7.f7e0615d.js.map
